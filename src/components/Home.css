@@ -1,0 +1,20 @@
+
+#deals_grid{
+    margin: 50px 10px 50px 10px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+
+}
+
+#deals_grid img,#banner img{
+    width: 100%;
+}
+
+#deals_grid2{
+    margin: 50px 10px 50px 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+
+}

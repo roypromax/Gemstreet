@@ -1,12 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import Login from './components/Login';
+import AllRoutes from './components/AllRoutes';
+import Navbar from './components/Navbar';
+
 
 function App() {
   return (
     <div className="App">
-      Clone of www.caratlane.com
-      <Login/>
+      <Navbar/>
+      <AllRoutes/>
     </div>
   );
 }
