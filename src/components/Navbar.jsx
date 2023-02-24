@@ -15,9 +15,9 @@ export default function Navbar(){
                 <li><Link to="/products">New Arrivals</Link></li>
                 <li><Link to="/products">Rings</Link></li>
                 <li><Link to="/products">Earrings</Link></li>
-                <li><Link to="/products">Bracelets&Bangles</Link></li>
-                <li><Link to="/products">Solitaires</Link></li>
-                <li><Link to="/products">Other Jewellery</Link></li>
+                <li><Link to="/products">Bracelets</Link></li>
+                <li><Link to="/products">Necklaces</Link></li>
+                <li><Link to="/products">Pendants</Link></li>
             </ul>
         </nav>
         </div>
