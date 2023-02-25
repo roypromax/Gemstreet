@@ -4,7 +4,7 @@
             "id" : 1,
             "name" : "Emma Flora Diamond Ring",
             "price" : 72322,
-            "discounted-price" : 64506,
+            "discountedPrice" : 64506,
             "image" : "https://cdn.caratlane.com/media/catalog/product/J/R/JR03126-WGP900_1_lar.jpg",
             "category" : "rings"
         },
@@ -12,7 +12,7 @@
             "id" : 2,
             "name" : "Mutyaa Pearl Ring",
             "price" : 38572,
-            "discounted-price" : 36323,
+            "discountedPrice" : 36323,
             "image" : "https://cdn.caratlane.com/media/catalog/product/J/R/JR07311-1YP6P0_1_lar.jpg",
             "category" : "rings"
         },
@@ -20,7 +20,7 @@
             "id" : 3,
             "name" : "Malaya Pearl Ring",
             "price" : 53126,
-            "discounted-price" : 50000,
+            "discountedPrice" : 50000,
             "image" : "https://cdn.caratlane.com/media/catalog/product/J/R/JR07315-1YP6P0_1_lar.jpg",
             "category" : "rings"
         },
@@ -28,7 +28,7 @@
             "id" : 4,
             "name" : "Moiz Pearl Drop Earrings",
             "price" : 35000,
-            "discounted-price" : 30000,
+            "discountedPrice" : 30000,
             "image" : "https://cdn.caratlane.com/media/catalog/product/J/E/JE07603-1YP6P0_1_lar.jpg",
             "category" : "earrings"
         },
@@ -36,7 +36,7 @@
             "id" : 5,
             "name" : "Madesha Drop Earrings",
             "price" : 100000,
-            "discounted-price" : 95000,
+            "discountedPrice" : 95000,
             "image" : "https://cdn.caratlane.com/media/catalog/product/J/E/JE07601-1YP6P0_1_lar.jpg",
             "category" : "earrings"
         },
@@ -44,7 +44,7 @@
             "id" : 6,
             "name" : "Siria Diamond Stud Earrings",
             "price" : 25000,
-            "discounted-price" : 21000,
+            "discountedPrice" : 21000,
             "image" : "https://cdn.caratlane.com/media/catalog/product/J/E/JE06694-1YP600_1_lar.jpg",
             "category" : "earrings"
         },
@@ -52,7 +52,7 @@
             "id" : 7,
             "name" : "Mohana Pearl Bracelet",
             "price" : 69000,
-            "discounted-price" : 42000,
+            "discountedPrice" : 42000,
             "image" : "https://cdn.caratlane.com/media/catalog/product/J/T/JT01727-1YP6P0_1_lar.jpg",
             "category" : "bracelets"
         },
@@ -60,7 +60,7 @@
             "id" : 8,
             "name" : "Asaira Gemstone Bracelet",
             "price" : 35000,
-            "discounted-price" : 32000,
+            "discountedPrice" : 32000,
             "image" : "https://cdn.caratlane.com/media/catalog/product/J/T/JT01655-1RP9OO_1_lar.jpg",
             "category" : "bracelets"
         },
@@ -68,7 +68,7 @@
             "id" : 9,
             "name" : "Duo Pearl Bracelet",
             "price" : 15000,
-            "discounted-price" : 12000,
+            "discountedPrice" : 12000,
             "image" : "https://cdn.caratlane.com/media/catalog/product/U/T/UT00416-YG00P0_1_lar.jpg",
             "category" : "bracelets"
         },
@@ -76,7 +76,7 @@
             "id" : 10,
             "name" : "Nousha Gemstone Necklace",
             "price" : 52000,
-            "discounted-price" : 49000,
+            "discountedPrice" : 49000,
             "image" : "https://cdn.caratlane.com/media/catalog/product/J/L/JL04410-1YP6P0_1_lar.jpg",
             "category" : "necklace"
         },
@@ -84,7 +84,7 @@
             "id" : 11,
             "name" : "Floret Pearl String Necklace",
             "price" : 34000,
-            "discounted-price" : 29000,
+            "discountedPrice" : 29000,
             "image" : "https://cdn.caratlane.com/media/catalog/product/U/L/UL00271-YG00P0_1_lar.jpg",
             "category" : "necklace"
         },
@@ -92,7 +92,7 @@
             "id" : 12,
             "name" : "Naira Diamond Necklace",
             "price" : 92000,
-            "discounted-price" : 90000,
+            "discountedPrice" : 90000,
             "image" : "https://cdn.caratlane.com/media/catalog/product/J/L/JL04286-1YP600_1_lar.jpg",
             "category" : "necklace"
         },
@@ -100,7 +100,7 @@
             "id" : 13,
             "name" : "Amanda Diamond Pendant",
             "price" : 10000,
-            "discounted-price" : 8000,
+            "discountedPrice" : 8000,
             "image" : "https://cdn.caratlane.com/media/catalog/product/J/P/JP00850-1RP900_1_lar.jpg",
             "category" : "pendants"
         },
@@ -108,7 +108,7 @@
             "id" : 14,
             "name" : "Swizzle Diamond Pendant",
             "price" : 8000,
-            "discounted-price" : 6000,
+            "discountedPrice" : 6000,
             "image" : "https://cdn.caratlane.com/media/catalog/product/J/P/JP00458-YGP900_1_lar.jpg",
             "category" : "pendants"
         },
@@ -116,7 +116,7 @@
             "id" : 15,
             "name" : "Deena Cutout Gold Pendant",
             "price" : 11000,
-            "discounted-price" : 9500,
+            "discountedPrice" : 9500,
             "image" : "https://cdn.caratlane.com/media/catalog/product/U/P/UP00082-YG0000_1_lar.jpg",
             "category" : "pendants"
         }
