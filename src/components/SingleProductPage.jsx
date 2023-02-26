@@ -59,7 +59,7 @@ function getCartItems(){
         setloading(true);
         axios({
             method : "get",
-            url : `http://localhost:3000/products/${params.id}`
+            url : `https://gem-street-mock-server.onrender.com/products/${params.id}`
         })
             .then((res)=>setData(res.data))
                 .catch((error)=>console.log(error))

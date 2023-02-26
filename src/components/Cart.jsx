@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Image,HStack,Heading,VStack,Container,SimpleGrid,Box,Center,Text,Button } from "@chakra-ui/react";
 import { Grid,GridItem,Card, CardHeader, CardBody, CardFooter,Stack,Divider,ButtonGroup} from '@chakra-ui/react'
+import { AuthContext } from "../contexts/AuthContextProvider";
+import { useNavigate,Link } from "react-router-dom";
 
 function getCartItems(){
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -28,6 +30,10 @@ function gettotalPrice(cart){
 export default function Cart(){
 
     const [cart,setCart] = useState(getCartItems());
+
+    const {isAuth} = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     function Increment(item){
         let newCart=cart.map((el,i)=>{
@@ -68,6 +74,29 @@ export default function Cart(){
         localStorage.setItem("cart",JSON.stringify(newCart));
         setCart(newCart);
     }
+
+    function buyFn(){
+        if(isAuth){
+            alert("Thank you! for shopping with us. Check your email for order details");
+            setCart([]);
+            localStorage.setItem("cart",JSON.stringify([]));
+            navigate("/");
+        }else{
+            alert("You are not logged in. Please login to place your order.");
+            navigate("/login");
+        }
+    }
+
+    if(cart.length===0){
+        return <Center m={20}><Heading
+        color='#4F3267'
+        lineHeight={1.1}
+        fontWeight={600}
+        fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
+        Cart is empty!
+        </Heading>
+        </Center>
+    }else{
     
     return (
         <>
@@ -140,6 +169,7 @@ export default function Cart(){
                     Total Price: {gettotalPrice(cart)}
                 </Heading>
                 <Button
+                    onClick={()=>buyFn()}
                     rounded={'none'}
                     w={'full'}
                     mt={8}
@@ -161,4 +191,5 @@ export default function Cart(){
             </Grid>
         </>
     )
+}
 }

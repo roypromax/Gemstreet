@@ -1,14 +1,18 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { AuthContext } from "../contexts/AuthContextProvider"
 import logo from "./gem-street-logo.png"
 import "./Navbar.css"
 
 export default function Navbar(){
+
+    const {isAuth,logout} = useContext(AuthContext);
     return (
         <div>
         <nav id="first">
             <Link to="/"><img src={logo} alt="Logo"/></Link>
             <input type="text" placeholder="Search your favourite products"/>
-            <p>Select your PIN Code | <Link to="/cart">Cart</Link> | <Link to="/login">Login</Link></p>
+            <p>Select your PIN Code | <Link to="/cart">Cart</Link> | {isAuth?<span style={{cursor:'pointer'}} onClick={()=>logout()}>Logout</span>:<Link to="/login">Login</Link>}</p>
         </nav>
             <nav id="second">
             <ul>

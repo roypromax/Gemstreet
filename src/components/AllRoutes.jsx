@@ -13,6 +13,7 @@ export default function AllRoutes(){
             <Route path="/products" element={<Products/>}/>
             <Route path="/products/:id" element={<SingleProductPage/>}/>
             <Route path="/cart" element={<Cart/>}/>
+            <Route path="*" element={<Home/>}/>
         </Routes>
     )
 }

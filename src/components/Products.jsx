@@ -53,7 +53,7 @@ export default function Products() {
     dispatcher({type:"request"})
     axios({
       method : "get",
-      url : `http://localhost:3000/products`,
+      url : `https://gem-street-mock-server.onrender.com/products`,
       params : {
         _sort : "discountedPrice",
         _order : sortOrder,
