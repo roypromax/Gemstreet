@@ -1,6 +1,4 @@
 import {
-    Box,
-    chakra,
     Container,
     Stack,
     Text,
@@ -11,24 +9,51 @@ import {
     Heading,
     SimpleGrid,
     StackDivider,
-    useColorModeValue,
-    VisuallyHidden,
-    List,
-    ListItem,
     Spinner,
+    Select
   } from '@chakra-ui/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import Footer from './Footer';
-//   import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-//   import { MdLocalShipping } from 'react-icons/md';
+
+function getCartItems(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  return cart;
+}
+
   
   export default function SingleProductPage() {
 
     const [data,setData] = useState({});
     const [loading,setloading] = useState(false);
     const params = useParams();
+    const cart = getCartItems();
+
+    console.log(cart);
+    console.log(params);
+
+    function addtoCart(){
+      if(data.size===undefined){
+        alert("Please select a size")
+      }else{
+      let duplicate = false;
+      for(let i=0; i<=cart.length-1; i++){
+        if(cart[i].id==data.id && cart[i].size==data.size){
+          duplicate = true;
+          break;
+        }
+      }
+
+      if(duplicate){
+        alert("Product is already in cart")
+      }else{
+        cart.push({...data,quantity:1});
+        localStorage.setItem("cart",JSON.stringify(cart));
+        alert("Product is added to cart");
+      }
+    }
+    }
 
     useEffect(()=>{
         setloading(true);
@@ -46,11 +71,13 @@ import Footer from './Footer';
     }else{
     return (
     <>
-      <Container maxW={'7xl'} bg="#F3E5F5">
+      <Container maxW={'7xl'} bg="#F3E5F5"> 
+      <Link to="/products">Go back to products page</Link> 
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={{ base: 8, md: 10 }}
-          py={{ base: 18, md: 24 }}>
+          py={{ base: 5, md: 5 }}
+          >
           <Flex>
             <Image
               rounded={'md'}
@@ -80,11 +107,15 @@ import Footer from './Footer';
               </Text>
               <Text
                 as = "s"
-                // color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
                 fontSize={'xl'}>
                 ₹{data.price}
               </Text>
+              <Select bg="#E1BEE7" w='400px' h='40px' value={data.size} placeholder="Select size" onChange={(e)=>setData({...data,size:e.target.value})}>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </Select>
             </VStack>
   
             <Stack
@@ -113,6 +144,7 @@ import Footer from './Footer';
             </Stack>
   
             <Button
+              onClick={addtoCart}
               rounded={'none'}
               w={'full'}
               mt={8}
@@ -129,7 +161,6 @@ import Footer from './Footer';
             </Button>
   
             <Stack direction="row" alignItems="center" justifyContent={'center'}>
-              {/* <MdLocalShipping /> */}
               <Text>2-3 business days delivery</Text>
             </Stack>
           </Stack>
