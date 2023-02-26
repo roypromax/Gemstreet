@@ -46,8 +46,9 @@ const reducer = (state,{type,payload}) => {
 export default function Products() {
 
   const [state,dispatcher] = useReducer(reducer,initialState);
-  const [sortOrder,setSortOrder] = useState("asc");
+  const [sortOrder,setSortOrder] = useState(null);
   const [category,setCategory] = useState(null);
+  const [sort,setSort] = useState(null);
 
   useEffect(()=>{
     dispatcher({type:"request"})
@@ -55,7 +56,7 @@ export default function Products() {
       method : "get",
       url : `https://gem-street-mock-server.onrender.com/products`,
       params : {
-        _sort : "discountedPrice",
+        _sort : sort,
         _order : sortOrder,
         category : category
       }
@@ -74,27 +75,27 @@ export default function Products() {
 
   return (
     <Box bg="#EDE7F6">
-      <Box  m={2} className="sortingButtons">
-        <Button bg="#E1BEE7" disabled={sortOrder==="asc"} onClick={()=>setSortOrder("asc")} className="sortByCostAsc">
-          Sort by Asc
-        </Button>
-        <Button bg="#E1BEE7" disabled={sortOrder==="desc"} onClick={()=>setSortOrder("desc")}  className="sortByCostDesc" m={2}>
-          Sort by Desc
-        </Button>
-      </Box>
-      <Center m={2}> 
-        <Select bg="#E1BEE7" w='400px' h='40px' value = {category} onChange={(e)=>setCategory(e.target.value||null)}>
-          <option value="">{category===null?"Filter By Category":"Remove filter"}</option>
-          <option value="rings">Rings</option>
-          <option value="earrings">Earrings</option>
-          <option value="bracelets">Bracelets</option>
-          <option value="necklace">Necklaces</option>
-          <option value="pendants">Pendants</option>
-        </Select>
-      </Center>
       
-      {state.isLoading?<Spinner />
-      :<SimpleGrid m={5} p={5} bg="#E1BEE7" columns={[1,2,3,4]} spacingX={10} spacingY={10} className="main_container">
+      {state.isLoading?<Center m={20}><Spinner size='xl'/></Center>
+      :<><Box  m={2} className="sortingButtons">
+      <Button bg="#E1BEE7" disabled={sortOrder==="asc"} onClick={()=>{setSort("discountedPrice");setSortOrder("asc")}} className="sortByCostAsc">
+        Sort by Price Low to High
+      </Button>
+      <Button bg="#E1BEE7" disabled={sortOrder==="desc"} onClick={()=>{setSort("discountedPrice");setSortOrder("desc")}}  className="sortByCostDesc" m={2}>
+      Sort by Price High to Low
+      </Button>
+    </Box>
+    <Center m={2}> 
+      <Select bg="#E1BEE7" w='400px' h='40px' value = {category} onChange={(e)=>setCategory(e.target.value||null)}>
+        <option value="">{category===null?"Filter By Category":"Remove filter"}</option>
+        <option value="rings">Rings</option>
+        <option value="earrings">Earrings</option>
+        <option value="bracelets">Bracelets</option>
+        <option value="necklace">Necklaces</option>
+        <option value="pendants">Pendants</option>
+      </Select>
+    </Center>
+      <SimpleGrid m={5} p={5} bg="#E1BEE7" columns={[1,2,3,4]} spacingX={10} spacingY={10} className="main_container">
       {state.data.map((el,i)=>{
         return (
           <Link to={`/products/${el.id}`}>
@@ -114,9 +115,11 @@ export default function Products() {
           </Link>
            )
           })}
+          
         </SimpleGrid>
+        <Footer/> </>
        }
-       <Footer/>      
+            
     </Box>
   );
 }

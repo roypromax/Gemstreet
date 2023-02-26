@@ -125,7 +125,10 @@ export default function Cart(){
                             ₹{el.discountedPrice}
                             </Text>
                             <Text>
-                            {el.quantity}
+                            {`(${el.size.toUpperCase()} SIZE)`}
+                            </Text>
+                            <Text>
+                            {`Quantity: ${el.quantity}`}
                             </Text>
                             <Center>
                             <ButtonGroup spacing='2'>

@@ -72,7 +72,7 @@ function getCartItems(){
     return (
     <>
       <Container maxW={'7xl'} bg="#F3E5F5"> 
-      <Link to="/products">Go back to products page</Link> 
+      <Text as='b' color='#4F3267'><Link to="/products">Go back to products</Link></Text>
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={{ base: 8, md: 10 }}
