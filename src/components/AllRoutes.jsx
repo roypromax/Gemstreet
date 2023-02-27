@@ -3,6 +3,7 @@ import Cart from "./Cart";
 import Home from "./Home";
 import Login from "./Login";
 import Products from "./Products";
+import Signup from "./Signup";
 import SingleProductPage from "./SingleProductPage";
 
 export default function AllRoutes(){
@@ -14,6 +15,7 @@ export default function AllRoutes(){
             <Route path="/products/:id" element={<SingleProductPage/>}/>
             <Route path="/cart" element={<Cart/>}/>
             <Route path="*" element={<Home/>}/>
+            <Route path="/signup" element={<Signup/>}/>
         </Routes>
     )
 }

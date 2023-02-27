@@ -5,9 +5,7 @@ import {
     FormControl,
     FormLabel,
     Input,
-    Checkbox,
     Stack,
-    Link,
     Button,
     Heading,
     Text,
@@ -15,7 +13,7 @@ import {
   } from '@chakra-ui/react';
 import axios from 'axios';
 import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContextProvider';
 
 
@@ -65,6 +63,7 @@ export default function Login(){
                 <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
                   <Stack align={'center'}>
                     <Heading fontSize={'4xl'}>Login to your account</Heading>
+                    <Text>New user? <Link style={{color:"#BA68C8"}} to="/signup">Click here</Link> to create a new account.</Text>
                   </Stack>
                   <Box
                     rounded={'lg'}
